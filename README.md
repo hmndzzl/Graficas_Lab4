@@ -1,5 +1,9 @@
 # Benatar - Renderizador 3D
 
+<img width="924" height="615" alt="image" src="https://github.com/user-attachments/assets/ea702684-5f0d-4e83-9377-9991098e804d" />
+
+<img width="849" height="589" alt="image" src="https://github.com/user-attachments/assets/cc2a1f15-2440-4504-924f-c23346b5ffc6" />
+
 ## Características y Funcionalidades
 
 El proyecto es un renderizador de software desarrollado en Rust para visualizar la nave **Benatar**, e incluye:
