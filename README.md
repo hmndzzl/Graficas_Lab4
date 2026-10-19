@@ -30,35 +30,55 @@ El proyecto es un renderizador de software desarrollado en Rust para visualizar 
 
 ## Guía de Ejecución
 
-**Prerrequisitos:**
+### Prerrequisitos
 
-Contar con la cadena de herramientas de **[Rust (cargo)](https://rustup.rs/)** instalada y un entorno gráfico para abrir la ventana del renderizador.
+- **Rust y Cargo:** Tener instalado [Rust](https://rustup.rs/) (versión estable recomendada).
+- **En Windows:** Contar con las herramientas de compilación de C++ (**Visual Studio C++ Build Tools** o el toolchain `x86_64-pc-windows-msvc`). `minifb` usa las APIs nativas de Win32, por lo que no requiere dependencias externas como SDL2.
+- **En macOS / Linux:** Entorno gráfico activo y dependencias de ventana estándar (CMake/X11 en Linux si aplica).
 
-1. Clona o descarga el repositorio en tu máquina.
+---
 
-   ```bash
+### En Windows (PowerShell / CMD / Windows Terminal)
+
+1. Abre **PowerShell** o **Windows Terminal** y clona el repositorio:
+
+   ```powershell
    git clone https://github.com/hmndzzl/Graficas_Lab4.git
-   ```
-
-2. Abre tu terminal y navega hasta el directorio raíz del proyecto, el cual debe contener `Cargo.toml` y `Benatar.obj`.
-
-   ```bash
    cd Graficas_Lab4
    ```
 
-3. Ejecuta el renderizador. El perfil de desarrollo está configurado con `opt-level = 3` para optimizar el dibujo por software en CPU.
+2. Compila y ejecuta el proyecto:
 
-   ```bash
-   cargo run
+   ```powershell
+   cargo run --release
    ```
 
-   También puedes ejecutarlo con el perfil de producción:
+   *(También puedes usar `cargo run` estándar, el cual ya cuenta con `opt-level = 3` en desarrollo).*
+
+3. Para correr las pruebas unitarias:
+
+   ```powershell
+   cargo test
+   ```
+
+---
+
+### En macOS / Linux (Terminal / Bash / Zsh)
+
+1. Abre tu terminal y clona el repositorio:
+
+   ```bash
+   git clone https://github.com/hmndzzl/Graficas_Lab4.git
+   cd Graficas_Lab4
+   ```
+
+2. Compila y ejecuta el proyecto:
 
    ```bash
    cargo run --release
    ```
 
-4. Para verificar la carga del modelo, el relleno de triángulos, el modo holograma y la cámara orbital, ejecuta las pruebas:
+3. Para ejecutar las pruebas unitarias:
 
    ```bash
    cargo test
@@ -82,8 +102,5 @@ Graficas_Lab4/
 └── Cargo.toml          # Configuración de Rust, dependencias y optimización.
 ```
 
-## Derechos de Autor y Aclaratoria Legal
-
-**ESTE ES UN PROYECTO ÚNICAMENTE CON PROPÓSITOS EDUCATIVOS Y SIN FINES DE LUCRO.**
 
 ### Hugo Méndez - 241265
