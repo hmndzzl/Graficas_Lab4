@@ -1,0 +1,58 @@
+Para su primer ejercicio del primer proyecto, deben cargar el modelo obj que hicieron en el último lab y deben pintarlo en la pantalla usando su función para pintar triángulos. Recorran manualmente las caras, tomen los valores de los índices de los vertices y usenlos para conseguir los tres vértices que se deben utilizar para dibujar un triángulo. Dibujen todos los triangulos en su pantalla. Un esqueleto para su main podría ser algo así:
+
+```rust
+#include <SDL2/SDL.h>
+#include <iostream>
+#include <glm/glm.hpp>
+#include <vector>
+#include "color.h"
+#include "framebuffer.h"
+#include "triangle.h"
+
+
+SDL_Window* window = nullptr;
+SDL_Renderer* renderer = nullptr;
+Color currentColor;
+
+void init() {
+    SDL_Init(SDL_INIT_VIDEO)
+    window = SDL_CreateWindow("Software Renderer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+}
+
+void setColor(const Color& color) {
+    currentColor = color;
+}
+
+
+
+void render() {
+     // coloquen aqui su codigo
+}
+
+int main(int argc, char* argv[]) {
+    init();
+    bool running = true;
+    while (running) {
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                running = false;
+            }
+        }
+
+        clear(); 
+
+        setColor(Color(255, 255, 0));  // pueden cambiar los colores
+        render();
+
+        renderBuffer(renderer);
+    }
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
+}
+```
