@@ -102,5 +102,8 @@ Graficas_Lab4/
 └── Cargo.toml          # Configuración de Rust, dependencias y optimización.
 ```
 
+## Derechos de Autor y Aclaratoria Legal
+
+**ESTE ES UN PROYECTO ÚNICAMENTE CON PROPÓSITOS EDUCATIVOS Y SIN FINES DE LUCRO.**
 
 ### Hugo Méndez - 241265
